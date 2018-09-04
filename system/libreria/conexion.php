@@ -40,19 +40,33 @@ public function connect(){
 
 public function select($query){
 
-		$sql=mysqli_query($this->cn,$query);
-		if (!$sql) {
+		$rs=mysqli_query($this->cn,$query);
+		if (!$rs) {
 			echo "Error en la consulta";
 			exit();
 		}else{
 
 			$result=array();
-			while ($row = mysqli_fetch_array($sql)) {
+			while ($row = mysqli_fetch_array($rs)) {
 				$result[]=$row;
 			}
 			return $result;
 		}
 
+
+}
+
+
+public function insert($query){
+
+		$rs=mysqli_query($this->cn,$query);
+		
+		if (!$rs) {
+			echo "Error en la insercion".mysqli_error($this->cn);
+			
+		}
+
+		
 
 }
 

@@ -12,7 +12,7 @@ foreach ($rs as  $value) {
 	$fila.="<td>".$value['descripcion']."</td>";
 	$fila.="<td class='editar'><a href='#'>Editar</a></td>";
 	$fila.="<td class='eliminar'><a href='#'>Eliminar</a></td>";
-	$fila.="<td class='agregar'><a href='#'>Agregar</a></td>";
+	
 	$fila.="</tr>";
 
 }
@@ -24,6 +24,15 @@ foreach ($rs as  $value) {
  <html>
  <head>
  	<title></title>
+ 	<style type="text/css">
+ 		thead{
+ 			background: #000;
+ 			color: #FFF;
+ 			size: 20px;
+ 			font-weight: bold;
+ 		}
+ 	</style>
+ 	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.css">
  	<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
  	<script type="text/javascript" src="../../js/categoria.js"></script>
  </head>
@@ -31,15 +40,15 @@ foreach ($rs as  $value) {
 
  	<h1>Crud Categorias</h1>
  	<ul>
- 		<li id="nuevo"><a href="#">Nuevo</a></li>
+ 		<li id="nuevo"><a href="categoria_nuevo.php">Nuevo</a></li>
 
  	</ul>
-  <table border="2">
-  	<tr>
-  		<td>Codigo</td>
+  <table  class="table col-sm-6">
+  	<thead class="thead-dark">
+  		<td >Codigo</td>
   		<td>Descripicon</td>
-  			<td colspan="3" align="center">Acciones</td>
-  	</tr>
+  			<td   colspan="3" align="center">Acciones</td>
+  	</thead>
  	
 <?php echo $fila; ?>
 
